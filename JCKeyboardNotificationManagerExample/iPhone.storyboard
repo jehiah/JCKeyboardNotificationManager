@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fMI-ZF-1w7">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="GvF-lp-L65">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="fMI-ZF-1w7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lVK-Ml-Q0F">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sVi-Cc-8sT" kind="relationship" relationship="rootViewController" id="IiZ-s3-CAz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IKv-nd-jzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-154"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Tyz-SN-Nyf">
+            <objects>
+                <viewController id="sVi-Cc-8sT" customClass="TextViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uKz-dk-7m0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text loaded from ViewController" translatesAutoresizingMaskIntoConstraints="NO" id="UNd-7I-zh2">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UNd-7I-zh2" firstAttribute="bottom" secondItem="uKz-dk-7m0" secondAttribute="bottom" type="default" id="1OU-XX-L0D"/>
+                            <constraint firstItem="UNd-7I-zh2" firstAttribute="leading" secondItem="uKz-dk-7m0" secondAttribute="leading" type="default" id="AJp-jV-ERl"/>
+                            <constraint firstItem="UNd-7I-zh2" firstAttribute="top" secondItem="uKz-dk-7m0" secondAttribute="top" type="default" id="Y3e-tm-qqY"/>
+                            <constraint firstItem="UNd-7I-zh2" firstAttribute="trailing" secondItem="uKz-dk-7m0" secondAttribute="trailing" type="default" id="iW9-fK-oq8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="V2w-La-pqe">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="suN-TA-sgS">
+                            <connections>
+                                <action selector="doneEdit:" destination="sVi-Cc-8sT" id="DMA-OE-i6c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="UNd-7I-zh2" id="lE2-iQ-aTo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMS-dJ-vIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="-363"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="TextViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TextViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doneEdit:"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
