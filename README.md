@@ -1,13 +1,21 @@
 JCKeyboardNotificationManager
 =============================
 
-A class that helps manage resizing views when the keybaord appears and when it dissapears
+A class that helps manage resizing views when the keybaord appears and dissapears. 
 
-```
+Most code examples only handle UIKeyboardWillShowNotification and UIKeyboardWillHideNotification, this 
+also handles UIKeyboardWillChangeFrameNotification which covers when users change keyboard 
+languages (some keyboards, like emoji, are different heights).
+
+In your .h:
+
+```objectivec
 @property (nonatomic, retain) KeyboardNotificationManager *kbmgr;
 ```
 
-```
+In your .m:
+
+```objectivec
 @synthesize kbmgr;
 
 - (void)viewWillAppear:(BOOL)animated
